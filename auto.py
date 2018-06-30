@@ -5,11 +5,17 @@ from selenium.common.exceptions import NoAlertPresentException
 from time import sleep
 from logbook import Logger, FileHandler
 from datetime import datetime as dt
+from sys import argv
 
 #load the logger
 try:
     logger = Logger('Automater')
-    log = FileHandler(__file__+'.log')
+    #use argv[1] as the log_file_name if supplied else use __file__ name
+    if len(argv) != 2:
+        name = str(__file__).split('.')
+        log = FileHandler(name[0]+'.log')
+    else:
+        log = FileHandler(argv[1])
     log.push_application()
     logger.info('Application initialized at '+str(dt.now()))
     logger.info('Loading users...')

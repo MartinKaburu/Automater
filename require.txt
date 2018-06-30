@@ -1,0 +1,3 @@
+Selenium==3.13.0
+Logbook==1.4.0
+geckodriver==0.17.0
