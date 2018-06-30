@@ -28,7 +28,7 @@ try:
     try:
         logger.info('starting webdriver...')
         '''
-            For windows users: Replace line 29 with 24 and 25
+            For windows users: Replace line 31 with 28 and 29
             Ensure that geckodriver is in path i.e 'C:\Users\USERNAME\geckodriver.exe'
             Edit to use chromedriver or any other webdriver available
             path = os.path.join(os.getenv('USERPROFILE'), 'geckdriver.exe')
@@ -88,7 +88,7 @@ try:
     logger.notice('application terminated at '+str(dt.now()))
     driver.quit()
     exit(0)
-except KeyboardInterrupt as KI:
+except KeyboardInterrupt:
     logger.error('KeyboardInterrupt...Dying')
     try:
         driver.quit()
